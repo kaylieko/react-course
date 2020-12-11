@@ -1,0 +1,220 @@
+// --------------------------------------------------
+// Margin/Padding Helpers
+// --------------------------------------------------
+@include make-mt;
+@include make-mb;
+@include make-mr;
+@include make-ml;
+@include make-pt;
+@include make-pb;
+@include make-pl;
+@include make-pr;
+@include make-ft;
+@include make-fw;
+
+.no-pd {
+    padding: 0 !important;
+}
+.no-mg {
+    margin: 0 !important;
+}
+
+@media (max-width: $screen-xs-max) {
+    @include make-mt-xs;
+    @include make-mb-xs;
+    @include make-pt-xs;
+    @include make-pb-xs;
+    @include make-pl-xs;
+    @include make-pr-xs;
+    @include make-ft-xs;
+
+    .no-pd-xs {
+        padding: 0 !important;
+    }
+    .no-mg-xs {
+        margin: 0 !important;
+    }  
+}
+
+// --------------------------------------------------
+// Data Attr Helpers
+// --------------------------------------------------
+[data-hide-empty=""],
+[data-hide-not-empty]:not([data-hide-not-empty=""]) {
+  display: none !important;
+}
+
+// --------------------------------------------------
+// Responsive Layout Helpers
+// --------------------------------------------------
+.hide-mobile {
+     @media (max-width: $screen-xs-max) {
+        display: none !important;
+    }
+}
+.show-mobile {
+    @media (min-width: $screen-sm-min) {
+        display: none !important;
+    }
+}
+.show-tablet {
+    @media (min-width: $screen-md-min) {
+        display: none !important;
+    }
+}
+.show-desktop {
+    @media (max-width: $screen-sm-max) {
+        display: none !important;
+    }
+}
+
+// --------------------------------------------------
+// Display Helpers
+// --------------------------------------------------
+.flex {
+    @include flex();
+}
+.flex-col {
+    @include flex-direction(column);
+}
+.flex-wrap {
+    @include flex-wrap(wrap);
+}
+.flex-between {
+    @include flex();
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+}
+.is-hidden {
+    display: none !important;
+}
+.is-block {
+    display: block !important;
+}
+.is-inline {
+    display: inline !important;
+}
+.is-table {
+    display: table;
+}
+@media (max-width: $screen-xs-max) {
+    .is-block-xs {
+        display: block;
+    }
+}
+
+// --------------------------------------------------
+// Position Helpers
+// --------------------------------------------------
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+
+// --------------------------------------------------
+// Layout Alignment Helpers
+// --------------------------------------------------
+.left {
+    float: left !important;
+}
+.right {
+    float: right !important;
+}
+.center {
+    @extend %center-block;
+}
+%center-block {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+// --------------------------------------------------
+// Text Alignment Helpers
+// --------------------------------------------------
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+
+// --------------------------------------------------
+// Text Styling Helpers
+// --------------------------------------------------
+.underline { 
+    text-decoration: underline; 
+}
+
+
+// --------------------------------------------------
+// Border Styling Helpers
+// --------------------------------------------------
+.btop {
+    border-top: $border-top !important;
+}
+.bbot {
+    border-bottom: $border-bottom !important;
+}
+.no-border {
+    border: none !important;
+}
+.with-border {
+    border: $border-base !important;
+}
+
+// --------------------------------------------------
+// Box Styling Helpers
+// --------------------------------------------------
+.shadow {
+    box-shadow: rgba(0,0,0,.08) 0 2px 4px 0;
+    -webkit-box-shadow: rgba(0,0,0,.08) 0 2px 4px 0;
+    -moz-box-shadow: rgba(0,0,0,.08) 0 2px 4px 0;
+}
+
+// --------------------------------------------------
+// Visibility Helpers
+// --------------------------------------------------
+.is-invisible {
+    visibility: none !important;
+}
+.is-visible {
+    visibility: visible !important;
+}
+
+// --------------------------------------------------
+// Clearfix Helpers
+// --------------------------------------------------
+.clearfix, .cf {
+    @include clearfix;
+}
+
+// --------------------------------------------------
+// ADA Helpers
+// --------------------------------------------------
+.ada-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.aria-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    position: absolute;
+    color: transparent !important;
+    pointer-events: none;
+}

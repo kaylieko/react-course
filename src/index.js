@@ -1,12 +1,14 @@
+import './scss/style.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 
-import './style.scss';
+//axios (network request)
+//https://unsplash.com/documentation (photos API)
+//semantic ui
+//faker
 
-const App = () => {
-	return <div>Hi there!</div>;
-};
-
+// Renders the App component into a div with id 'root'
 ReactDOM.render(
 	<App />,
 	document.querySelector('#root')

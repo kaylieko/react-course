@@ -1,0 +1,978 @@
+//
+// Settings
+//
+// 1.  Scaffolding
+// 2.  Typography
+// 3.  Colors
+// 4.  Breakpoints
+// 5.  Grid
+// 6.  Container Sizes
+// 7.  Borders
+// 8.  Close
+// 9.  Breadcrumbs
+// 10. Lists
+// 11. Search Forms
+// 12. General Forms
+// 13. Map
+// 14. Map Lists
+// 15. Buttons
+// 16. Alerts
+// 17. Pagination
+// 18. Loaders
+//
+// --------------------------------------------------
+
+
+//
+// 1. Scaffolding
+// Settings for some of the most global styles
+// --------------------------------------------------
+$white: #fff;
+$gray: #F1F2F2;
+$blue: #2C4B93;
+
+$body-bg: #fff !default;
+$border: #eee;
+$padding-base-vertical: 6px !default;
+$padding-base-horizontal: 12px !default;
+
+$margin-base-vertical: 10px !default;
+$margin-base-horizontal: 10px !default;
+
+$hr-border: #777 !default;
+
+$fw-list: 300 400 500 600;
+
+$ft-list: 14 16 18 20 22 24 28 32 36;
+
+// margin values (in pixels)
+$mg-list: 0 5 10 15 20 25 30 40 45 50;
+
+// padding top values (in pixels)
+$pd-list: 0 5 10 15 20 25 30 40 45 50;
+
+
+$brand-helper-1: #333333;
+$brand-helper-2: #3C3C3C;
+$brand-helper-3: #403B37;
+$brand-helper-4: #888888;
+$brand-helper-5: #8e8e90;
+$brand-helper-6: #999999;
+$brand-helper-7: #C8C8C8;
+$brand-helper-8: #CCCCCC;
+$brand-helper-9: #D7D7D7;
+$brand-helper-10: #DCDCDC;
+$brand-helper-11: #E1E1E1;
+$brand-helper-12: #EBEBEB;
+$brand-helper-13: #EDF8F7;
+$brand-helper-14: #EEEEEE;
+$brand-helper-15: #F2F2F2;
+$brand-helper-16: #F5F5F5;
+
+//
+// 2. Typography
+// --------------------------------------------------
+$text-color: #3f3f3f !default;
+$link-color: #2C4B93 !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+
+$font-family-sans-serif: "HelveticaNeueW01-45Ligh", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 14px !default;
+$font-size-large: ceil(($font-size-base * 1.25)) !default;  // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)) !default;  // ~12px
+
+$font-size-h1: floor(($font-size-base * 2.6)) !default;     // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)) !default;    // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default;      // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default;     // ~18px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default;     // ~12px
+
+// Unit-less 'line-height'
+$line-height-base: 1.428571429 !default;    // 20/14
+// Computed 'line-height'
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default;
+$line-height-large: 1.3333333 !default;
+$line-height-small: 1.5 !default;
+
+// By default, headings inherit from the body
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+
+//
+// 3. Colors
+// --------------------------------------------------
+$primary-bg: #012169 !default;
+$primary-color: darken($primary-bg, 45%); // #8c8c8c
+
+$secondary-bg: #CCC !default;
+$secondary-color: darken($secondary-bg, 45%); // #484848
+
+$success-bg: #DFF2BF !default;
+$success-color: darken($success-bg, 45%); // #77A922
+
+$info-bg: #BDE5F8 !default;
+$info-color: darken($info-bg, 45%); // #1486BC
+
+$warning-bg: #FEEFB3 !default;
+$warning-color: darken($warning-bg, 45%); // #C9A103
+
+$error-bg: #FFBABA !default;
+$error-color: darken($error-bg, 45%); // #D40000
+
+$invalid-bg: transparent !default;
+$invalid-color: initial !default;
+
+
+//
+// 4. Media queries breakpoints
+// Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// --------------------------------------------------
+// Small screen / tablet
+$screen-sm-min: 768px !default;
+
+// Medium screen / desktop
+$screen-md-min: 1024px !default;
+
+// Large screen / wide desktop
+$screen-lg-min: 1024px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1024px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//
+// 5. Grid
+// Define your custom responsive grid
+// --------------------------------------------------
+// Number of columns in the grid
+$grid-columns: 12 !default;
+
+// Padding between columns. Gets divided in half for the left and right
+$grid-gutter-width: 30px !default;
+
+
+//
+// 6. Container sizes
+// Define the maximum width of `.container` for different screen sizes.
+// --------------------------------------------------
+// Small screen / tablet
+$container-tablet: (100vw) !default;
+// For $screen-sm-min and up
+$container-sm: $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop: (1250px + $grid-gutter-width) !default;
+// For $screen-md-min and up
+$container-md: $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop: (1250px + $grid-gutter-width) !default;
+// For $screen-lg-min and up
+$container-lg: $container-large-desktop !default;
+
+
+//
+// 7. Border
+// --------------------------------------------------
+$border-base: 1px solid #333 !default;
+$border-radius-base: 0px !default;
+$border-radius-large: 4px !default;
+$border-radius-small: 2px !default;
+$border-top: $border-base !default;
+$border-bottom: $border-base !default;
+$invalid-border: 2px solid $error-color !default;
+
+
+//
+// 8. Close
+// --------------------------------------------------
+$close-width: 15px !default;
+$close-font-size: ($font-size-base * 1.5) !default;
+$close-font-weight: bold !default;
+$close-color: #000 !default;
+$close-text-shadow: 0 1px 0 #fff !default;
+$close-float: right !default;
+$close-opacity: 0.4 !default;
+$close-hover-opacity: 0.7 !default;
+$close-line-height: 30px !default; // this should match the input height
+$close-text-decoration: none !default;
+$close-cursor: pointer !default;
+$close-padding: (
+    top: 0,
+    right: 5px,
+    bottom: 0,
+    left: 0
+) !default;
+$close-position: relative !default;
+$close-total-width: ($close-width + map-get($close-padding, right)) !default;
+
+
+//
+// 9. Breadcrumbs
+// --------------------------------------------------
+$breadcrumb-wrap-settings: (
+    width: auto,
+    height: auto,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: none
+) !default;
+
+$breadcrumb-settings: (
+    width: auto,
+    height: auto,
+    margin: 5px 0,
+    padding: 10px,
+    bg-color: #fff,
+    border: none
+) !default;
+
+$crumb-wrap-settings: (
+    width: auto,
+    height: auto,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: none
+) !default;
+
+$crumb-wrap-separator: ">" !default;
+$crumb-wrap-separator-color: #ccc !default;
+$crumb-wrap-separator-pad: 0 5px !default;
+
+$crumb-item-settings: (
+    width: auto,
+    height: auto,
+    margin: 0,
+    padding: 5px,
+    bg-color: transparent,
+    border: none
+) !default;
+
+$crumb-item-font-settings: (
+    size: $font-size-base,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: $text-color
+) !default;
+
+$crumb-item-link-border: (
+    radius: $border-radius-base,
+    same: none solid transparent,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$crumb-item-link-settings: (
+    width: auto,
+    height: auto,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $crumb-item-link-border
+) !default;
+
+$crumb-item-link-font-settings: (
+    size: $font-size-base,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: $link-color
+) !default;
+
+$crumb-item-link-hover-color: $link-hover-color !default;
+
+$crumb-item-curr-border-settings: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$crumb-item-curr-bg: transparent !default;
+$crumb-item-curr-color: #333 !default;
+$crumb-item-curr-padding: 0px !default;
+
+
+//
+// 10. Lists
+// --------------------------------------------------
+$list-margin: 0.75em 0 !default;
+$list-padding: 0 0 0 35px !default;
+$list-item-margin: 0.3em 0 !default;
+$list-item-padding: 0 !default;
+
+
+//
+// 11. Search Form
+// --------------------------------------------------
+$map-search-wrap-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null,
+) !default;
+
+$map-search-wrap-settings: (
+    height: 40px,
+    margin: 0,
+    padding: 0px,
+    bg-color: transparent,
+    border: $map-search-wrap-border,
+) !default;
+
+$map-search-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-search-settings: (
+    width: 100%,
+    height: 100%,
+    margin: 0,
+    padding: 0,
+    bg-color: white,
+    border: $map-search-border
+) !default;
+
+$map-search-form-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-search-form-settings: (
+    width: 100%,
+    height: 100%,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $map-search-form-border
+) !default;
+
+$search-input-wrap-border: (
+    radius: $border-radius-base,
+    same: 1px solid #8c8c8c,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$search-input-wrap-settings: (
+    height: auto,
+    margin: 0,
+    padding: 5px 0,
+    bg-color: transparent,
+) !default;
+
+$search-input-border: (
+    radius: $border-radius-base,
+    same: 0px,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$search-input-settings: (
+    width: 300px,
+    height: 30px,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $search-input-border
+) !default;
+
+$search-input-text-indent: 10px;
+$search-input-color: #666666;
+
+$search-nearby-wrap-border: (
+    radius: $border-radius-base,
+    same: null,
+    top: 1px solid #8c8c8c,
+    right: 0px,
+    bottom: 1px solid #8c8c8c,
+    left: 1px solid #8c8c8c
+) !default;
+
+$search-nearby-wrap-settings: (
+    height: 100%,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+) !default;
+
+$search-nearby-wrap-line-height: 30px !default;
+$search-nearby-wrap-align: center !default;
+$search-nearby-wrap-hover-bg: $primary-bg !default;
+
+$search-nearby-border: (
+    radius: $border-radius-base,
+    same: 0px,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$search-nearby-settings: (
+    width: 100%,
+    height: 100%,
+    margin: 0,
+    padding: 4px 10px,
+    bg-color: transparent,
+    border: $search-nearby-border
+) !default;
+
+$search-submit-wrap-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$search-submit-wrap-settings: (
+    height: 40px,
+    margin: 0,
+    padding: 0,
+    bg-color: #444,
+    border: $search-submit-wrap-border
+) !default;
+
+$search-submit-wrap-align: center !default;
+
+$search-submit-border: (
+    radius: $border-radius-base,
+    same: null,
+    top: inherit,
+    right: inherit,
+    bottom: inherit,
+    left: 0px
+) !default;
+
+$search-submit-settings: (
+    height: map-get($search-submit-wrap-settings, 'height'),
+    margin: 0,
+    padding: 0px 15px,
+    bg-color: transparent,
+    color: #fff,
+    border: $search-submit-border
+) !default;
+
+
+//
+// 12. Map
+// --------------------------------------------------
+$map-wrap-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-wrap-settings: (
+    width: 100%,
+    height: 650px,
+    margin: 0px,
+    padding: 0px,
+    bg-color: transparent,
+    border: $map-wrap-border
+) !default;
+
+$map-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+// map shouldn't have a margin or padding
+$map-settings: (
+    width: 100%,
+    height: 100%,
+    margin: 0px,
+    padding: 0px,
+    bg-color: transparent,
+    border: $map-border
+) !default;
+
+
+//
+// 13. Map List
+// --------------------------------------------------
+$map-list-wrap-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-list-wrap-settings: (
+    width: 100%,
+    height: auto,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $map-list-wrap-border
+) !default;
+
+$map-list-wrap-height-short: 150px !default;
+$map-list-wrap-height-tall: 598px !default;
+
+$map-list-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-list-settings: (
+    width: 100%,
+    height: auto,
+    margin: 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $map-list-border
+) !default;
+
+$map-list-item-wrap-border: (
+    radius: $border-radius-base,
+    same: null,
+    top: none,
+    right: none,
+    bottom: 1px solid $brand-helper-7,
+    left: none,
+) !default;
+
+$map-list-item-wrap-settings: (
+    width: 100%,
+    height: auto,
+    margin: 0 0 10px 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $map-list-item-wrap-border
+) !default;
+
+$map-list-item-wrap-margin-single: 0px !default;
+$map-list-item-wrap-padding-single: 0px !default;
+
+$map-list-item-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-list-item-settings: (
+    width: 100%,
+    height: auto,
+    margin: 0px,
+    padding: 0px,
+    bg-color: transparent,
+    border: $map-list-item-border
+) !default;
+
+$map-list-item-margin-single: 0px !default;
+$map-list-item-padding-single: 0px !default;
+
+$map-list-item-header-wrap-border: (
+    radius: $border-radius-base,
+    same: null,
+    top: $border-base,
+    right: none,
+    bottom: $border-base,
+    left: none
+) !default;
+
+$map-list-item-header-wrap-settings: (
+    width: 100%,
+    height: auto,
+    margin: 10px 0,
+    padding: 0,
+    bg-color: transparent,
+    border: $map-list-item-header-wrap-border
+) !default;
+
+$map-list-item-header-wrap-lheight: map-get($map-list-item-header-wrap-settings, 'height');
+
+$map-list-item-header-border: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$map-list-item-header-settings: (
+    width: 100%,
+    height: 30px,
+    margin: 0px,
+    padding: 0px,
+    bg-color: transparent,
+    border: $map-list-item-header-border
+) !default;
+
+$map-list-item-header-font-settings: (
+    size: $font-size-base,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: $text-color
+) !default;
+
+$hours-header-open-color: #4f8a10 !default;
+$hours-header-closed-color: #d8000c !default;
+$hours-line-height: 1.7em !default;
+$hours-daypart-width: 90px !default;
+$hours-daypart-display: inline-block !default;
+$hours-daypart-weight: normal !default;
+
+
+//
+// 14. Address
+// --------------------------------------------------
+$address-settings: (
+    size: $font-size-base,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: $text-color
+) !default;
+
+$loc-name-settings: (
+    size: $font-size-large,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: $text-color
+) !default;
+
+$distance-settings: (
+    size: $font-size-small,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: #ccc
+) !default;
+
+$phone-settings: (
+    size: $font-size-base,
+    weight: normal,
+    style: normal,
+    transform: none,
+    color: $text-color
+) !default;
+
+
+//
+// 15. Buttons
+// --------------------------------------------------
+$btn-height-base: 30px !default;
+$btn-line-height: $btn-height-base !default;
+
+$btn-font: $font-size-base !default;
+$btn-font-weight: normal !default;
+$btn-text-transform: none !default;
+
+$btn-pad-vertical: $padding-base-vertical !default;
+$btn-pad-horizontal: $padding-base-horizontal !default;
+
+$btn-border-settings: (
+    radius: $border-radius-base,
+    same: 1px solid,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$btn-shadow-color: rgba(white, 0.4) !default;
+$btn-shadow: none !default;
+$btn-text-shadow: none !default;
+
+$btn-transition: 0.2s ease-in-out !default;
+
+$btn-disabled-bg: #ccc !default;
+$btn-disabled-color: darken($btn-disabled-bg, 45%) !default;
+$btn-disabled-border: darken($btn-disabled-bg, 45%) !default;
+
+$btn-primary-settings: (
+    background: $primary-bg,
+    color: $primary-color,
+    border: $primary-color,
+    hover-bg: darken($primary-bg, 6%),
+    hover-shadow: none,
+    active-shadow: none
+) !default;
+
+$btn-secondary-settings: (
+    background: $secondary-bg,
+    color: $secondary-color,
+    border: $secondary-color,
+    hover-bg: lighten($secondary-bg, 6%),
+    hover-shadow: none,
+    active-shadow: none
+) !default;
+
+$btn-success-settings: (
+    background: $success-bg,
+    color: $success-color,
+    border: $success-color,
+    hover-bg: lighten($success-bg, 6%),
+    hover-shadow: none,
+    active-shadow: none
+) !default;
+
+$btn-info-settings: (
+    background: $info-bg,
+    color: $info-color,
+    border: $info-color,
+    hover-bg: lighten($info-bg, 6%),
+    hover-shadow: none,
+    active-shadow: none
+) !default;
+
+$btn-warning-settings: (
+    background: $warning-bg,
+    color: $warning-color,
+    border: $warning-color,
+    hover-bg: lighten($warning-bg, 6%),
+    hover-shadow: none,
+    active-shadow: none
+) !default;
+
+$btn-error-settings: (
+    background: $error-bg,
+    color: $error-color,
+    border: $error-color,
+    hover-bg: lighten($error-bg, 6%),
+    hover-shadow: none,
+    active-shadow: none
+) !default;
+
+// (type  color  border  bg hover-bg hover-shadow active-shadow)
+$btn-types: (
+    (btn-secondary $btn-secondary-settings)
+    (btn-success $btn-success-settings)
+    (btn-info $btn-info-settings)
+    (btn-warning $btn-warning-settings)
+    (btn-error $btn-error-settings)
+) !default;
+
+
+//
+// 16. Alerts
+// --------------------------------------------------
+$alert-padding: 10px !default;
+$alert-margins: 10px 0 !default;
+$alert-border-radius: $border-radius-base !default;
+
+$alert-primary-settings: (
+    background: $primary-bg,
+    color: $primary-color,
+    border: 1px solid $primary-color
+) !default;
+
+$alert-secondary-settings: (
+    background: $secondary-bg,
+    color: $secondary-color,
+    border: 1px solid $secondary-color
+) !default;
+
+$alert-success-settings: (
+    background: $success-bg,
+    color: $success-color,
+    border: 1px solid $success-color
+) !default;
+
+$alert-info-settings: (
+    background: $info-bg,
+    color: $info-color,
+    border: 1px solid $info-color
+) !default;
+
+$alert-warning-settings: (
+    background: $warning-bg,
+    color: $warning-color,
+    border: 1px solid $warning-color
+) !default;
+
+$alert-error-settings: (
+    background: $error-bg,
+    color: $error-color,
+    border: 1px solid $error-color
+) !default;
+
+$alert-types: (
+    (alert $alert-primary-settings)
+    (alert-secondary $alert-secondary-settings)
+    (alert-success $alert-success-settings)
+    (alert-info $alert-info-settings)
+    (alert-warning $alert-warning-settings)
+    (alert-error $alert-error-settings)
+) !default;
+
+
+//
+// 17. Pagination
+// --------------------------------------------------
+$pagination-wrap-border-settings: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$pagination-wrap-settings: (
+    width: 100%,
+    height: auto,
+    margin: 10px 0px,
+    padding: 0px,
+    bg-color: transparent,
+    border: $pagination-wrap-border-settings
+) !default;
+
+$pagination-has-bg-img: false !default;
+$pagination-bg-img-border: none !default;
+
+$pagination-border-settings: (
+    radius: $border-radius-base,
+    same: none,
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+) !default;
+
+$pagination-settings: (
+    width: auto,
+    height: auto,
+    margin: 0px 5px 0px 0px,
+    padding: 2px 9px,
+    bg-color: transparent,
+    border: $pagination-border-settings
+) !default;
+
+$pagination-line-height: map-get($pagination-settings, height) !default;
+$pagination-font-weight: bold !default;
+$pagination-control-width: auto !default;
+$pagination-num-width: auto !default;
+
+$pagination-nlink-settings: (
+    font-weight: $pagination-font-weight,
+    bg: transparent,
+    bg-img: none,
+    border: none,
+    color: #293035
+) !default;
+
+$pagination-link-settings: (
+    font-weight: $pagination-font-weight,
+    bg: transparent,
+    bg-img: none,
+    border: none,
+    color: #293035
+) !default;
+
+$pagination-link-hover-settings: (
+    font-weight: $pagination-font-weight,
+    bg: map-get($pagination-link-settings, bg),
+    bg-img: map-get($pagination-link-settings, bg-img),
+    border: map-get($pagination-link-settings, border),
+    color: #0077D9
+) !default;
+
+$pagination-curr-settings: (
+    font-weight: $pagination-font-weight,
+    bg: #cdcdcd,
+    bg-img: map-get($pagination-nlink-settings, bg-img),
+    border: none,
+    color: map-get($pagination-link-settings, color)
+) !default;
+
+
+//
+// 18. Loaders
+// --------------------------------------------------
+$loading-svg: none !default;
